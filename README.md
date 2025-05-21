@@ -95,7 +95,7 @@ fmt.Println(v)
 
 
 
-//Method -> chỉ la func với 1 reciver thôi 
+//Method -> chỉ la func với 1 reciver thôi (hay truyền struct vào)  -> reciver chính là struct
 
 func bình thường -> không dùng được potiner trong bien truyen vao 
 func +ten hàm + kieu dl tra ve
@@ -111,6 +111,31 @@ func (v *Test) add() int {
 
 }
 
+
+Func và Method
+```
+func
+func sayHello() {
+	fmt.Println("Hello world")
+}
+
+Method
+
+type Dog struct {
+	Name string
+}
+
+func (d Dog) Bark() {
+	fmt.Println(d.Name, "says Woof!")
+}
+
+
+
+myDog := Dog{Name: "Tom"}
+myDog.Bark()  // gọi thông qua biến struct
+
+```
+
 //Interface
 
 type Abser interface {
@@ -120,3 +145,24 @@ type Abser interface {
 chỉ cần method nào có 
 
 Abs() float64 -. thì nó tự implement 
+
+
+
+//Concurency(đa lương nhưng nhẹ hơn java còn java tới 1MB (vài 1KB stack)  Concurrency trong Go (Golang) là khả năng thực thi nhiều tác vụ (hoặc luồng công việc) cùng lúc hoặc gần như cùng lúc, 
+giúp chương trình trở nên nhanh hơn và hiệu quả hơn, đặc biệt với các tác vụ I/O hoặc xử lý độc lập.
+
+-> làm giao tác
+Goroutines
+
+cú pháp :  go + hàm
+
+Chanels giao tiếp trong Goroutines
+
+Khai bao chanel : ch:= make(chan int)
+
+ch <-v //Gui gia tri v vao chanel
+v:= <-ch //Lay gia tri khoi chanel
+
+go func() {ch <- 1} () fmt.Println(<-ch)
+
+
