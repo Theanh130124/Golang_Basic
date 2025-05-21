@@ -120,3 +120,22 @@ type Abser interface {
 chỉ cần method nào có 
 
 Abs() float64 -. thì nó tự implement 
+
+
+
+//Concurency(đa lương nhưng nhẹ hơn java còn java tới 1MB (vài 1KB stack)  Concurrency trong Go (Golang) là khả năng thực thi nhiều tác vụ (hoặc luồng công việc) cùng lúc hoặc gần như cùng lúc, 
+giúp chương trình trở nên nhanh hơn và hiệu quả hơn, đặc biệt với các tác vụ I/O hoặc xử lý độc lập.
+
+-> làm giao tác
+Goroutines
+
+cú pháp :  go + hàm
+
+Chanels giao tiếp trong Goroutines
+
+Khai bao chanel : ch:= make(chan int)
+
+ch <-v //Gui gia tri v vao chanel
+v:= <-ch //Lay gia tri khoi chanel
+
+go func() {ch <- 1} () fmt.Println(<-ch)
