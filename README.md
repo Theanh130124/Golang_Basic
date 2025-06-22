@@ -120,3 +120,5 @@ type Abser interface {
 chỉ cần method nào có 
 
 Abs() float64 -. thì nó tự implement 
+
+testing
